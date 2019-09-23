@@ -358,7 +358,7 @@ var AuthService = /** @class */ (function () {
     function AuthService(router, http) {
         this.router = router;
         this.http = http;
-        this.apiUrl = "http://localhost:3000";
+        this.apiUrl = "https://f-deploy.herokuapp.com";
         this.isUserAuthorized = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
         this.userData = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
         this.users = [
@@ -1361,7 +1361,7 @@ var OrdersService = /** @class */ (function () {
         this.http = http;
         this.productCart = productCart;
         this.router = router;
-        this.apiUrl = "http://localhost:3000";
+        this.apiUrl = "https://f-deploy.herokuapp.com";
     }
     OrdersService.prototype.makeAnOrder = function (order) {
         var _this = this;
@@ -1418,7 +1418,7 @@ var ProductCart = /** @class */ (function () {
         this.cart = new _cart_cart_cart_model__WEBPACK_IMPORTED_MODULE_0__["Cart"]();
         this.onProductAdded = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
         this.gettingProducts = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subscription"]();
-        this.apiUrl = "http://localhost:3000";
+        this.apiUrl = "https://f-deploy.herokuapp.com";
         //this.unsubscribeFromProductsGettedFromServer();  
         this.checkCartExistenseByUserId();
         this.getCartFromServer();
@@ -1544,7 +1544,7 @@ __webpack_require__.r(__webpack_exports__);
 var ProductService = /** @class */ (function () {
     function ProductService(http) {
         this.http = http;
-        this.apiUrl = "http://localhost:3000";
+        this.apiUrl = "https://f-deploy.herokuapp.com";
         this.products = {
         // pizza: [
         //     new Product("Піца Емілія", "./../../assets/pizza1.jpg", "550", "30", "Шинка, моцарела, помідори, кукурудза, соус часниковий", 200),
