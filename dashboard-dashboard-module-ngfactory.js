@@ -2187,17 +2187,19 @@ var OrderHistoryComponent = /** @class */ (function () {
      * Get orders using 'orderService'
      */
     OrderHistoryComponent.prototype.getOrders = function () {
-        //this.loadingService.toggleLoading();
-        // this.loadingService.toggleLoading();
-        //this.editModal.toggleEditMode();
         var _this = this;
+        this.loadingService.toggleLoading();
+        //this.loadingService.toggleLoading();
+        this.editModal.toggleEditMode();
         this.orderSubscription = this.orderService.getOrders()
             .subscribe(function (res) {
             _this.orders = res;
-            setTimeout(function () {
-                //this.editModal.toggleEditMode();
-                //this.loadingService.toggleLoading();
-            }, 2000);
+            // setTimeout(
+            //   () => {
+            _this.editModal.toggleEditMode();
+            _this.loadingService.toggleLoading();
+            //   }, 2000 
+            // )
             console.log(res);
         }, function (err) {
             alert('Something went wrong!');
