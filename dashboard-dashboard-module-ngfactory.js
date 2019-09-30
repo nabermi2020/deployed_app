@@ -2098,8 +2098,6 @@ var EditProfileComponent = /** @class */ (function () {
         var formData = this.editForm.value;
         this.authService.checkUserInfo(formData)
             .subscribe(function (res) {
-            //console.log(res);
-            _this.loadingService.toggleLoading();
             if (res.length > 0) {
                 _this.authService.updateUserInfo(formData)
                     .subscribe(function (res) {
