@@ -254,16 +254,16 @@ var AuthGuard = /** @class */ (function () {
         this.router = router;
         this.route = route;
         this.authService = authService;
-        //this.isAuthorized = this.authService.isAuthorized();
+        // this.isAuthorized = this.authService.isAuthorized();
     }
     /**
      * Check user authentication status
-     * @param {ActivatedRouteSnapshot} route snapshot
-     * @param {RouterStateSnapshot} router state
-     * @return {boolean} return authentication status
+     * @param route snapshot
+     * @param router state
+     * @return return authentication status
      */
     AuthGuard.prototype.canActivate = function (route, state) {
-        if (this.authService.isAuthorized() && localStorage.getItem("userInfo")) {
+        if (this.authService.isAuthorized() && localStorage.getItem('userInfo')) {
             return true;
         }
         else {
@@ -300,9 +300,9 @@ var authRoutes = [
     { path: 'authentication', component: _authentication_authentication_component__WEBPACK_IMPORTED_MODULE_0__["AuthenticationComponent"], children: [
             { path: 'signin', component: _sign_in_sign_in_component__WEBPACK_IMPORTED_MODULE_2__["SignInComponent"] },
             { path: 'signup', component: _sign_up_sign_up_component__WEBPACK_IMPORTED_MODULE_1__["SignUpComponent"] },
-            { path: '', redirectTo: '/authentication/signin', pathMatch: "full" },
+            { path: '', redirectTo: '/authentication/signin', pathMatch: 'full' },
         ] },
-    { path: '', redirectTo: '/authentication/signin', pathMatch: "full" },
+    { path: '', redirectTo: '/authentication/signin', pathMatch: 'full' },
 ];
 var AuthRoutingModule = /** @class */ (function () {
     function AuthRoutingModule() {
@@ -368,13 +368,13 @@ var AuthService = /** @class */ (function () {
         this.http = http;
         this.loadingService = loadingService;
         this.editModal = editModal;
-        this.apiUrl = "http://localhost:3000";
+        this.apiUrl = 'https://f-deploy.herokuapp.com';
         this.isUserAuthorized = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
         this.userData = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
         this.users = [
-            new _user_model__WEBPACK_IMPORTED_MODULE_4__["User"]("John", "Smith", "john_smith777", "john777", "+380501654784", "john777@gmail.com", "NY, Green Valley 15/64"),
-            new _user_model__WEBPACK_IMPORTED_MODULE_4__["User"]("Michael", "Naberezhnyi", "michael777", "test123", "+380501865210", "mnabe777@gmail.com", "LA, Red Valley 7/32"),
-            new _user_model__WEBPACK_IMPORTED_MODULE_4__["User"]("John", "Doe", "johnl777", "demo1234", "+380502565210", "john_doe@gmail.com", "Las Vegas, Yellow Road 7/32")
+            new _user_model__WEBPACK_IMPORTED_MODULE_4__["User"]('John', 'Smith', 'john_smith777', 'john777', '+380501654784', 'john777@gmail.com', 'NY, Green Valley 15/64'),
+            new _user_model__WEBPACK_IMPORTED_MODULE_4__["User"]('Michael', 'Naberezhnyi', 'michael777', 'test123', '+380501865210', 'mnabe777@gmail.com', 'LA, Red Valley 7/32'),
+            new _user_model__WEBPACK_IMPORTED_MODULE_4__["User"]('Johh', 'Doe', 'johnl777', 'demo1234', '+380502565210', 'john_doe@gmail.com', 'Las Vegas, Yellow Road 7/32')
         ];
     }
     /**
@@ -397,7 +397,7 @@ var AuthService = /** @class */ (function () {
                 _this.isUserAuthorized.next(_this.isAuthenticated);
                 authStatus = true;
                 _this.userData.next(res[0]);
-                //this.loadingService.toggleLoading();
+                // this.loadingService.toggleLoading();
                 setTimeout(function () {
                     // this.loadingService.toggleLoading();
                     // this.editModal.toggleEditMode();
@@ -424,12 +424,12 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.logOut = function () {
         this.isAuthenticated = false;
         this.isUserAuthorized.next(this.isAuthenticated);
-        localStorage.removeItem("userInfo");
+        localStorage.removeItem('userInfo');
     };
     /**
-    * Register new user and navigate to the 'sign-in'
-    * @param {User} new user instance
-    */
+     * Register new user and navigate to the 'sign-in'
+     * @param {User} new user instance
+     */
     AuthService.prototype.signUp = function (users) {
         var _this = this;
         var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({ 'Content-type': 'application/json' });
@@ -1015,7 +1015,7 @@ var SignUpComponent = /** @class */ (function () {
         });
     };
     Object.defineProperty(SignUpComponent.prototype, "firstName", {
-        //Need refactoring
+        // Need refactoring
         get: function () {
             return this.registrationForm.get('firstName');
         },
@@ -1023,7 +1023,7 @@ var SignUpComponent = /** @class */ (function () {
         configurable: true
     });
     Object.defineProperty(SignUpComponent.prototype, "lastName", {
-        //Need refactoring
+        // Need refactoring
         get: function () {
             return this.registrationForm.get('lastName');
         },
@@ -1031,7 +1031,7 @@ var SignUpComponent = /** @class */ (function () {
         configurable: true
     });
     Object.defineProperty(SignUpComponent.prototype, "login", {
-        //Need refactoring
+        // Need refactoring
         get: function () {
             return this.registrationForm.get('login');
         },
@@ -1039,7 +1039,7 @@ var SignUpComponent = /** @class */ (function () {
         configurable: true
     });
     Object.defineProperty(SignUpComponent.prototype, "email", {
-        //Need refactoring
+        // Need refactoring
         get: function () {
             return this.registrationForm.get('email');
         },
@@ -1047,7 +1047,7 @@ var SignUpComponent = /** @class */ (function () {
         configurable: true
     });
     Object.defineProperty(SignUpComponent.prototype, "password", {
-        //Need refactoring  
+        // Need refactoring  
         get: function () {
             return this.registrationForm.get('passwords.password');
         },
@@ -1055,7 +1055,7 @@ var SignUpComponent = /** @class */ (function () {
         configurable: true
     });
     Object.defineProperty(SignUpComponent.prototype, "passwordRepeat", {
-        //Need refactoring  
+        // Need refactoring  
         get: function () {
             return this.registrationForm.get('passwords.passwordRepeat');
         },
@@ -1063,7 +1063,7 @@ var SignUpComponent = /** @class */ (function () {
         configurable: true
     });
     Object.defineProperty(SignUpComponent.prototype, "phone", {
-        //Need refactoring  
+        // Need refactoring  
         get: function () {
             return this.registrationForm.get('phone');
         },
@@ -1071,7 +1071,7 @@ var SignUpComponent = /** @class */ (function () {
         configurable: true
     });
     Object.defineProperty(SignUpComponent.prototype, "address", {
-        //Need refactoring  
+        // Need refactoring  
         get: function () {
             return this.registrationForm.get('address');
         },
@@ -1146,10 +1146,10 @@ var SignUpComponent = /** @class */ (function () {
         return promise;
     };
     /**
-    * Compare two passwords which were entered by user in appropriate fields
-    * @param {FormGroup} users' passwords
-    * @return {null || Obj} returns checking results
-    */
+     * Compare two passwords which were entered by user in appropriate fields
+     * @param {FormGroup} users' passwords
+     * @return {null || Obj} returns checking results
+     */
     SignUpComponent.prototype.validatePasswords = function (registrationFormGroup) {
         var password = registrationFormGroup.controls.password.value;
         var repeatPassword = registrationFormGroup.controls.passwordRepeat.value;
@@ -1178,7 +1178,7 @@ var SignUpComponent = /** @class */ (function () {
             this.authService.signUp(newUser);
         }
     };
-    //It's not used
+    // It's not used
     SignUpComponent.prototype.forbiddenPassword = function (control) {
         var _this = this;
         this.userPassword = control.value;
@@ -1194,7 +1194,7 @@ var SignUpComponent = /** @class */ (function () {
         });
         return promise;
     };
-    //It's not used
+    // It's not used
     SignUpComponent.prototype.forbiddenRepeatedPassword = function (control) {
         this.userRepeatedPassword = control.value;
         console.log(this.userRepeatedPassword);
@@ -1391,7 +1391,7 @@ var LoadingService = /** @class */ (function () {
     LoadingService.prototype.toggleLoading = function () {
         this.isLoadingEnabled = !this.isLoadingEnabled;
         this.onLoadingChange.next(this.isLoadingEnabled);
-        console.log(this.isLoadingEnabled);
+        // console.log(this.isLoadingEnabled);
     };
     LoadingService.ngInjectableDef = _angular_core__WEBPACK_IMPORTED_MODULE_2__["defineInjectable"]({ factory: function LoadingService_Factory() { return new LoadingService(_angular_core__WEBPACK_IMPORTED_MODULE_2__["inject"](_edit_modal_service__WEBPACK_IMPORTED_MODULE_1__["EditModalService"])); }, token: LoadingService, providedIn: "root" });
     return LoadingService;
@@ -1457,11 +1457,11 @@ var OrdersService = /** @class */ (function () {
             .subscribe(function (res) {
             _this.productCart.cleanCart();
             // this.loadingService.toggleLoading();
-            // this.editModal.toggleEditMode();
+            // this.editModal.toggleEditMode();   
             _this.router.navigate(['dashboard/products/pizza']);
         }, function (err) {
-            //console.log(err);
-            //alert('Something went wrong!');
+            // console.log(err);
+            // alert('Something went wrong!');
         });
     };
     /**
@@ -1507,7 +1507,7 @@ var ProductCart = /** @class */ (function () {
         this.onProductAdded = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
         this.gettingProducts = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subscription"]();
         this.apiUrl = "https://f-deploy.herokuapp.com";
-        //this.unsubscribeFromProductsGettedFromServer();  
+        // this.unsubscribeFromProductsGettedFromServer();  
         this.checkCartExistenseByUserId();
         this.getCartFromServer();
     }
@@ -1523,7 +1523,7 @@ var ProductCart = /** @class */ (function () {
             .subscribe(function (res) {
             if (res.length != 0) {
                 //  alert('Cart exists!');
-                console.log(res);
+                // console.log(res);
             }
             else {
                 // alert('Cart doesn\'t exist!');
@@ -1560,7 +1560,7 @@ var ProductCart = /** @class */ (function () {
             .subscribe(function (res) {
             // alert('successfully added');
         }, function (err) {
-            //alert('error added');
+            // alert('error added');
         });
     };
     /**
@@ -1572,11 +1572,11 @@ var ProductCart = /** @class */ (function () {
         var userId = this.authService.getCurrentUser().id;
         this.gettingProducts = this.http.get(this.apiUrl + "/cart/" + userId, { headers: headers })
             .subscribe(function (res) {
-            //console.log('Getted from server!');
+            // console.log('Getted from server!');
             _this.cart.setProducts(res["products"]);
             _this.cart.setCartId(res["cartId"]);
             _this.onProductAdded.next(_this.cart.getCart());
-            //console.log(this.cart);
+            // console.log(this.cart);
             // alert('Success getting cart!!!');
         }, function (err) {
             alert('Error while getting cart from server!');
@@ -1641,13 +1641,13 @@ var ProductCart = /** @class */ (function () {
         this.synchCartWithServer();
         this.onProductAdded.next(this.cart);
     };
-    //It's not realized
+    // It's not realized
     ProductCart.prototype.onOrderSuccess = function () {
-        //TODO
+        // TODO
     };
-    //It's not realized
+    // It's not realized
     ProductCart.prototype.onOrderError = function () {
-        //TODO
+        // TODO
     };
     return ProductCart;
 }());
