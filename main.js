@@ -350,7 +350,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var _user_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user.model */ "./src/app/auth/user.model.ts");
 /* harmony import */ var _shared_services_edit_modal_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/services/edit-modal.service */ "./src/app/shared/services/edit-modal.service.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
 
 
 
@@ -368,7 +370,7 @@ var AuthService = /** @class */ (function () {
         this.http = http;
         this.loadingService = loadingService;
         this.editModal = editModal;
-        this.apiUrl = 'https://f-deploy.herokuapp.com';
+        this.apiUrl = src_environments_environment__WEBPACK_IMPORTED_MODULE_6__["environment"].apiUrl;
         this.isUserAuthorized = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
         this.userData = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
         this.users = [
@@ -493,7 +495,7 @@ var AuthService = /** @class */ (function () {
         var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({ 'Content-type': 'application/json' });
         return this.http.put(this.apiUrl + "/users/" + this.currentUser.id, user, { headers: headers });
     };
-    AuthService.ngInjectableDef = _angular_core__WEBPACK_IMPORTED_MODULE_6__["defineInjectable"]({ factory: function AuthService_Factory() { return new AuthService(_angular_core__WEBPACK_IMPORTED_MODULE_6__["inject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_6__["inject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_6__["inject"](_shared_services_loading_service__WEBPACK_IMPORTED_MODULE_0__["LoadingService"]), _angular_core__WEBPACK_IMPORTED_MODULE_6__["inject"](_shared_services_edit_modal_service__WEBPACK_IMPORTED_MODULE_5__["EditModalService"])); }, token: AuthService, providedIn: "root" });
+    AuthService.ngInjectableDef = _angular_core__WEBPACK_IMPORTED_MODULE_7__["defineInjectable"]({ factory: function AuthService_Factory() { return new AuthService(_angular_core__WEBPACK_IMPORTED_MODULE_7__["inject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_7__["inject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_7__["inject"](_shared_services_loading_service__WEBPACK_IMPORTED_MODULE_0__["LoadingService"]), _angular_core__WEBPACK_IMPORTED_MODULE_7__["inject"](_shared_services_edit_modal_service__WEBPACK_IMPORTED_MODULE_5__["EditModalService"])); }, token: AuthService, providedIn: "root" });
     return AuthService;
 }());
 
@@ -1417,7 +1419,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _auth_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../auth/auth.service */ "./src/app/auth/auth.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _edit_modal_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./edit-modal.service */ "./src/app/shared/services/edit-modal.service.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
 
 
 
@@ -1439,7 +1443,7 @@ var OrdersService = /** @class */ (function () {
         this.router = router;
         this.loadingService = loadingService;
         this.editModal = editModal;
-        this.apiUrl = "https://f-deploy.herokuapp.com";
+        this.apiUrl = src_environments_environment__WEBPACK_IMPORTED_MODULE_6__["environment"].apiUrl;
     }
     /**
      * Make an order and send it on server in case of success clean order cart
@@ -1473,7 +1477,7 @@ var OrdersService = /** @class */ (function () {
         var id = this.authService.getCurrentUser().id;
         return this.http.get(this.apiUrl + "/orders?userId=" + id, { headers: headers });
     };
-    OrdersService.ngInjectableDef = _angular_core__WEBPACK_IMPORTED_MODULE_6__["defineInjectable"]({ factory: function OrdersService_Factory() { return new OrdersService(_angular_core__WEBPACK_IMPORTED_MODULE_6__["inject"](_auth_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_6__["inject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_6__["inject"](_product_cart_service__WEBPACK_IMPORTED_MODULE_1__["ProductCart"]), _angular_core__WEBPACK_IMPORTED_MODULE_6__["inject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_6__["inject"](_loading_service__WEBPACK_IMPORTED_MODULE_0__["LoadingService"]), _angular_core__WEBPACK_IMPORTED_MODULE_6__["inject"](_edit_modal_service__WEBPACK_IMPORTED_MODULE_5__["EditModalService"])); }, token: OrdersService, providedIn: "root" });
+    OrdersService.ngInjectableDef = _angular_core__WEBPACK_IMPORTED_MODULE_7__["defineInjectable"]({ factory: function OrdersService_Factory() { return new OrdersService(_angular_core__WEBPACK_IMPORTED_MODULE_7__["inject"](_auth_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_7__["inject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_7__["inject"](_product_cart_service__WEBPACK_IMPORTED_MODULE_1__["ProductCart"]), _angular_core__WEBPACK_IMPORTED_MODULE_7__["inject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_7__["inject"](_loading_service__WEBPACK_IMPORTED_MODULE_0__["LoadingService"]), _angular_core__WEBPACK_IMPORTED_MODULE_7__["inject"](_edit_modal_service__WEBPACK_IMPORTED_MODULE_5__["EditModalService"])); }, token: OrdersService, providedIn: "root" });
     return OrdersService;
 }());
 
@@ -1495,6 +1499,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _auth_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../auth/auth.service */ "./src/app/auth/auth.service.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+
 
 
 
@@ -1506,7 +1512,7 @@ var ProductCart = /** @class */ (function () {
         this.cart = new _cart_cart_cart_model__WEBPACK_IMPORTED_MODULE_0__["Cart"]();
         this.onProductAdded = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
         this.gettingProducts = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subscription"]();
-        this.apiUrl = "https://f-deploy.herokuapp.com";
+        this.apiUrl = src_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].apiUrl;
         // this.unsubscribeFromProductsGettedFromServer();  
         this.checkCartExistenseByUserId();
         this.getCartFromServer();
@@ -1668,12 +1674,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductService", function() { return ProductService; });
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+
 
 
 var ProductService = /** @class */ (function () {
     function ProductService(http) {
         this.http = http;
-        this.apiUrl = "https://f-deploy.herokuapp.com";
+        this.apiUrl = src_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl;
         this.products = {
         // pizza: [
         //     new Product("Піца Емілія", "./../../assets/pizza1.jpg", "550", "30", "Шинка, моцарела, помідори, кукурудза, соус часниковий", 200),
@@ -1740,8 +1748,10 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 var environment = {
-    production: false
+    production: false,
+    apiUrl: 'https://f-deploy.herokuapp.com'
 };
+//'https://f-deploy.herokuapp.com'
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
