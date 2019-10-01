@@ -1667,6 +1667,8 @@ var ProductCart = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductService", function() { return ProductService; });
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+
 
 var ProductService = /** @class */ (function () {
     function ProductService(http) {
@@ -1710,6 +1712,12 @@ var ProductService = /** @class */ (function () {
     ProductService.prototype.getProductsByCategory = function (category) {
         var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]({ 'Content-type': 'application/json' });
         return this.http.get(this.apiUrl + "/" + category, { headers: headers });
+    };
+    ProductService.prototype.setSelectedProduct = function (productInfo) {
+        this.selectedProduct = productInfo;
+    };
+    ProductService.prototype.getSelectedProduct = function () {
+        return this.selectedProduct;
     };
     return ProductService;
 }());
